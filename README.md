@@ -24,6 +24,7 @@ Insights like this are also easy to find on existing websites such as [op.gg](ht
 - Microsoft Excel
 - CSV, Workbook
 - Power BI
+- Tableau
 - Automation: Claude
 
 
@@ -61,28 +62,38 @@ I don't actively play SR as much as I do ARAM, especially with the release of Ma
 
 I compared my stats to Keria's using radar charts. The raw numbers were initially too large to compare meaningfully, so all values were normalized to a 0–100 scale, where 100 represents the highest performer per metric. Keria and I are almost exact opposites on this chart, showing how different our gameplay really is:
 
-- **KDA:** Mine is 2.33, Keria's is 4.62 — he basically doubles my score.
-- **Avg Deaths:** I die 1.39x more often than Keria (4.57 vs. 3.29) — probably doesn't help my KDA either.
-- **Avg Assists:** Keria almost doubles my assist count — 14.21 vs. my 7.93.
+- **KDA:** Mine is 2.33, Keria's is 4.62; he basically doubles my score.
+- **Avg Deaths:** I die 1.39x more often than Keria (4.57 vs. 3.29) which probably doesn't help my KDA either.
+- **Avg Assists:** Keria almost doubles my assist count by 14.21 vs. my 7.93.
 - **Kill Participation:** I'm absent from 62.9% of team fights, while Keria is present for 76.7% of his. This is our biggest gap.
-- **Damage/min:** I deal a lot more — 517.2 vs. his 282.2. This shows I'm playing to deal damage, not necessarily to support.
-- **CS/min:** Mine sits at 2.5, Keria's at 0.96 — because I love taking your waves (you do not want me as your support).
-- **Vision Score (normalized):** Keria again doubles my score — 106.8 vs. my 49.3. This comes from being too scared to bush-check and wander. Since I stay mostly in bot lane, I have limited areas to ward. This may also explain my low kill participation, since I miss fights I never roam toward.
+- **Damage/min:** I deal a lot more than Keria; 517.2 vs. his 282.2. This shows I'm playing to deal damage, not necessarily to support.
+- **CS/min:** Mine sits at 2.5, Keria's at 0.96, because I love taking your waves (you do not want me as your support).
+- **Vision Score (normalized):** Keria again doubles my score with 106.8 vs. my 49.3. This comes from being too scared to bush-check and wander. Since I stay mostly in bot lane, I have limited areas to ward. This may also explain my low kill participation, since I miss fights I never roam toward.
 
 The reason I compare more specific stats with Keria and not Faker is role difference. It makes less sense to compare my support stats to a pro mid laner's. Keria, playing the same role on the same team, is the closest fair benchmark available.
 
 However, to keep my promise of comparing myself to Faker, I built a bar chart of the two stats that are at least semi-comparable across roles: average KDA and average deaths. Overall, I have the lowest KDA and the highest death rate of the three.
 
-**Personal Habits:** Win rate by day of week and time of day still needs its own visualization/image, since it wasn't included in the Power BI PDF.
+### **Personal Habits:** 
+I wanted to check when my prime playing occured: what day of the week and what time of day was I cooking.
+<img width="821" height="445" alt="image" src="https://github.com/user-attachments/assets/8a451324-49a3-4105-90eb-8d7ff72c4fed" />
+
+My peak playing hours are between 9:00pm and 10:00pm. Before this I have a very low win rate, indicating that I need to warm up playing. At 11:00pm my win rate decreases again. This is because of my sleeping schedule, I actually get really tired around this time and regret accepting match.
+
+<img width="731" height="432" alt="image" src="https://github.com/user-attachments/assets/8d3bbe29-9c5f-4535-aef3-c6b5a8a23e1e" />
+
+Now we look at what day of the week has the highest win rate. This is done with a heatmap: Thursdays seem to be my most dominant days with both Friday and Sunday close behind. Towards the end of the week I find more energy/time to play the game. There is no strongly outstanding day.
 
 ## Files
 
 | File | Description |
 |---|---|
-| [`LeagueOLegends.ipynb`](code/LeagueOLegends.ipynb) | Jupyter notebook (built in Google Colab) — Python + pandas script that pulls match data from the Riot API |
+| [`LeagueOLegends.ipynb`](code/LeagueOLegends.ipynb) | Jupyter notebook (built in Google Colab): Python + pandas script that pulls match data from the Riot API |
 | [`jackdzn_match_history.csv`](data/jackdzn_match_history.csv) | Raw match history exported from the notebook |
 | [`jackdzn_match_history_MASTER.xlsx`](data/jackdzn_match_history_MASTER.xlsx) | Workbook containing the raw data sheet plus a summary sheet with pivot tables analyzing champs and stats |
-| [`FinalLoLStatsPowerBI.pdf`](visualization_report/FinalLoLStatsPowerBI.pdf) | Finalized findings — all charts built in Power BI |
+| [`FinalLoLStatsPowerBI.pdf`](visualization_report/FinalLoLStatsPowerBI.pdf) | Finalized findings: all charts built in Power BI |
+| [`Final_Personal_Stats_LoL_Workbook.pdf`](visualization_report/Final_Personal_Stats_LoL_Workbook.pdf) | Tableau dashboard: individual charts plus combined dashboard view of champion stats and peak performance |
+| [`LoL_Habit_stats_and_more_champion_charts.pdf`](visualization_report/LoL_Habit_stats_and_more_champion_charts.pdf) | Tableau dashboard: combined view of win-rate-by-hour, day-of-week heatmap, playstyle scatter, and KDA-over-time |
 
 ## Limitations
 
